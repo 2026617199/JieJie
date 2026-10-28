@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf7f1;
+  --color-beige: #f1eadd;
+  --color-sand: #e6dcc9;
+  --color-champagne: #c9a96e;
+  --color-champagne-dark: #a8874f;
+  --color-blush: #e9d6d2;
+  --color-blush-deep: #d4a9a2;
+  --color-ink: #443c33;
+  --color-ink-soft: #7d7264;
+
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* 入场动画：尊重减少动态效果设置 */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .kenburns {
+    animation: none !important;
+  }
+}
+
+.kenburns {
+  animation: kenburns 18s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+/* 灯箱淡入 */
+.lightbox-enter {
+  animation: lightbox-in 0.25s ease both;
+}
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+::selection {
+  background: var(--color-blush);
+}
