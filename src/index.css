@@ -13,6 +13,7 @@
 
   --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
   --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-script: "Great Vibes", "Snell Roundhand", "Segoe Script", "Brush Script MT", cursive;
 }
 
 html {
@@ -28,6 +29,10 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
 }
 
 /* 入场动画：尊重减少动态效果设置 */
